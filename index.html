@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<main>
+    <section class="container">
+        <ul class="container__list" id="list-0">
+            <li class="container__list-item" id="list-item-0">
+                <button class="button"><p>Я родитель</p></button>
+                <button type="button" class="button delete__button" id="delete-0"><i class="fa-solid fa-trash"></i></button>
+                <button type="button" class="button edit__button" id="edit-0"><i class="fa-solid fa-pencil"></i></button>
+                <button type="button" class="button add__button" id="add-0"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" class="button hide__button" id="hide-0"><i class="fa-solid fa-chevron-down"></i></button>
+            </li>
+        </ul>
+    </section>
+    <section class="addChild">
+        <form class="formContainer" novalidate>
+            <button type="button" class="close"><i class="fa-solid fa-close"></i></button>
+            <input class="formContainer__input" name="russian" type="text" placeholder="На русском" >
+            <input class="formContainer__input" name="english" type="text" placeholder="На английском" >
+            <input class="formContainer__input" name="uzbKir" type="text" placeholder="На узбекском (кирилица)" >
+            <input class="formContainer__input" name="uzbLat" type="text" placeholder="На узбекском (латиница)" >
+            <button type="submit" class="submitForm">Сохранить</button>
+        </form>
+    </section>
+    <template class="template">
+        <ul class="container__list">
+            <li class="container__list-item">
+                <button class="button"><p class="button__text"></p></button>
+                <button type="button" class="button add__button"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" class="button delete__button"><i class="fa-solid fa-trash"></i></button>
+                <button type="button" class="button edit__button"><i class="fa-solid fa-pencil"></i></button>
+            </li>
+        </ul>
+    </template>
+</main>
+<script src="./constant.js" type="module"></script>
+<script src="./main.js" type="module"></script>
+</body>
+</html>

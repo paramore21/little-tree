@@ -1,0 +1,119 @@
+.addChild {
+    background-color: #00000096;
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s linear;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.addChild__active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: visible;
+    background-color: #ffffff00;
+    border: none;
+    box-shadow: 0;
+    outline: none;
+}
+
+.submitForm {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 2px;
+    width: 238px;
+    height: 46px;
+    align-self: center;
+    font-family: "Inter", sans-serif;
+    border: none;
+    margin-top: 45px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: space-between;
+    padding: 22px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.container__list-item {
+    list-style:none;
+    display: block;
+}
+
+.formContainer__input {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    padding: 25px 0 13px 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: none;
+}
+
+.button:hover {
+    background-color: aliceblue;
+}
+
+.close {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.close:hover {
+    background-color: aliceblue;
+}
+
+.hide {
+    display: none;
+}
