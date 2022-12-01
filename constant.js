@@ -7,8 +7,11 @@ export const editItem = listItem.querySelector(".edit__button")
 export const addItem = listItem.querySelector(".add__button")
 export const hideItem = listItem.querySelector(".hide__button")
 
-export const node = document.querySelector(".template")
+export const node = document.querySelector(".container__template")
 export const buttonNodeList = node.querySelector(".button__text")
+
+export const listNode = document.querySelector(".list-item__template")
+export const buttonNode = listNode.querySelector(".button__text")
 
 export const closeBtn = formContainer.querySelector(".close")
 export const submitForm = document.querySelector(".submitForm")
