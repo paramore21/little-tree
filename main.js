@@ -1,9 +1,8 @@
 import {
     container,
     form,
-    listNode,
     formContainer,
-    buttonNode
+    buttonNode,
     submitForm,
     closeBtn,
     addItem,
@@ -17,6 +16,8 @@ import {
 } from "./constant.js"
 
 let list = null;
+let templateSelector = null;
+let nodeSelector = null;
 class Node {
     constructor(title, order, parentId) {
         this.id = Math.floor(Math.random() * 1000);
@@ -39,8 +40,9 @@ class Node {
         }
     }
 
-    _getTemplateList(textContent){
-        const templateNode = document.querySelector(".container__template").content.querySelector(".container__list").cloneNode(true)
+    _getTemplateList(textContent, templateSelector, nodeSelector){
+    console.log(templateSelector, nodeSelector)
+        const templateNode = document.querySelector(templateSelector).content.querySelector(nodeSelector).cloneNode(true)
         const button = templateNode.querySelector(".button__text")
         const editBtn = templateNode.querySelector(".edit__button")
         const deleteBtn = templateNode.querySelector(".delete__button")
@@ -54,20 +56,20 @@ class Node {
         return templateNode
     }
 
-    _getTemplateLisItem(textContent){
-        const templateNode = document.querySelector(".list-item__template").content.querySelector(".container__list").cloneNode(true)
-        const button = templateNode.querySelector(".button__text")
-        const editBtn = templateNode.querySelector(".edit__button")
-        const deleteBtn = templateNode.querySelector(".delete__button")
-        const addBtn = templateNode.querySelector(".add__button")
-        templateNode.setAttribute('id', `list-${this.id}`)
-        editBtn.setAttribute('id', `list-${this.id}`)
-        deleteBtn.setAttribute('id', `list-${this.id}`)
-        addBtn.setAttribute('id', `list-${this.id}`)
-        addBtn.addEventListener("click", openDialog)
-        button.textContent = textContent.russian
-        return templateNode
-    }
+    // _getTemplateListItem(textContent){
+    //     const templateNode = document.querySelector(".list-item__template").content.querySelector(".container__list").cloneNode(true)
+    //     const button = templateNode.querySelector(".button__text")
+    //     const editBtn = templateNode.querySelector(".edit__button")
+    //     const deleteBtn = templateNode.querySelector(".delete__button")
+    //     const addBtn = templateNode.querySelector(".add__button")
+    //     templateNode.setAttribute('id', `list-${this.id}`)
+    //     editBtn.setAttribute('id', `list-${this.id}`)
+    //     deleteBtn.setAttribute('id', `list-${this.id}`)
+    //     addBtn.setAttribute('id', `list-${this.id}`)
+    //     addBtn.addEventListener("click", openDialog)
+    //     button.textContent = textContent.russian
+    //     return templateNode
+    // }
 }
 
 function getInputValues(){
@@ -84,7 +86,7 @@ submitForm.addEventListener("click", (e) => {
     submitFormAction(e)
     const textContent = getInputValues()
     const node = new Node(textContent, "asd", 123)
-    const childElement = node._getTemplate(textContent)
+    const childElement = node._getTemplateList(textContent, templateSelector, nodeSelector)
     list.appendChild(childElement)
 })
 
@@ -94,8 +96,14 @@ addItem.addEventListener("click", (e) => openDialog(e))
 function openDialog(e){
     list = e.target.parentElement.parentElement
     console.log(list, 'fierytsd')
-    if(list.querySelector('.container__list')){
-        list = list.querySelector('.container__list')
+    if(list.querySelector('.template__list')){
+        console.log(list, "jdiwjediwjeid")
+        list = list.querySelector('.template__list')
+        nodeSelector = '.container__list-item'
+        templateSelector = '.list-item__template'
+    } else {
+        nodeSelector = '.template__list'
+        templateSelector = '.container__template'
     }
     console.log(list)
     formContainer.classList.add("addChild__active")
